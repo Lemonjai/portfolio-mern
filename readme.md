@@ -13,3 +13,9 @@ The technology written in the application using MERN (MongoDB, ExpressJs, ReactJ
 4. Redux - State Management
 5. Grid Layout, Flexbox & Sass - CSS styling
 6. JavaScript - ES6
+
+## Features
+1. Validations for Users, Profile & Work/Projects
+2. Able to upload images to the MongoDB
+3. Has a service worker
+4. Shareable project links through social media
