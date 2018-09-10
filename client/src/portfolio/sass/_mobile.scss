@@ -1,0 +1,131 @@
+// Widescreens
+@include mediaXL {
+    .projects {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+// Desktop & Laptop
+@include mediaLg {
+    .projects {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+// Tablets & Small Laptop
+@include mediaMd {
+    main {
+        align-items: center;
+        text-align: center;
+
+        .lg-heading{
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+    }
+
+    ul.menu-nav, div.menu-branding{
+        float: none;
+        width: 100%;
+        min-height: 0;
+
+        &.show{
+            transform: translate3d(0 , 0, 0);
+        }
+    }
+
+    .menu-nav {
+        height: 75vh;
+        transform: translate3d(-100%, 0, 0);
+        font-size: 24px;
+    }
+
+    .menu-branding {
+        height: 25vh;
+        transform: translate3d(100%, 0, 0);
+
+        .portrait {
+            width: 9rem;
+            height: 9rem;
+        }
+    }
+
+    .about-info {
+        grid-template-areas: 
+        'bioimage'
+        'bio'
+        'job1'
+        'job2'
+        'job3';
+        
+        grid-template-columns: 1fr;
+    }
+
+    .projects {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+// Smartphones
+@include mediaSm {
+    main {
+        padding: 2rem;
+
+        main#home h1 {
+            margin-top: 10vh !important;
+        }
+
+        .lg-heading{
+            margin-top: 1rem;
+            font-size: 3rem;
+        }
+
+        .about-info{
+            img{
+                width: 100%;
+            }
+        }
+    }
+    
+    // Timline
+     /* Place the timelime to the left */
+  .timeline::after {
+    left: 31px;
+  }
+  
+  /* Full-width containers */
+  .container {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+  
+  /* Make sure that all arrows are pointing leftwards */
+  .container::before {
+    left: 60px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+
+  /* Make sure all circles are at the same spot */
+  .left::after, .right::after {
+    left: 15px;
+  }
+  
+  /* Make all right containers behave like the left ones */
+  .right {
+    left: 0%;
+  }
+
+
+    .projects {
+        grid-template-columns: 1fr;
+    }
+
+    .boxes {
+        div {
+            font-size: 1.5rem;
+        }
+    }
+}
