@@ -17,8 +17,9 @@ class Navbar extends Component {
 
     onLogoutClick = (e) => {
         e.preventDefault()
-        // localStorage.removeItem('jwtToken')
+        localStorage.removeItem('jwtToken')
         this.props.logoutUser()
+        window.location.href='/'
     }
 
     render(){

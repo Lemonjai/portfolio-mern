@@ -3,7 +3,9 @@ import { withRouter } from "react-router-dom"
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import { connect } from 'react-redux'
+
 import { loginUser } from '../../../redux/actions/authActions'
+import TextFieldGroup from '../common/TextFieldGroup'
 
 class Login extends Component {
 
@@ -57,22 +59,23 @@ class Login extends Component {
                 </h1>
 
                 <form className="wrapper" onSubmit={this.onSubmit}>
-                    <label>Email</label>
-                    <input 
+
+                    <TextFieldGroup 
                         type="email"
                         name="email"
-                        placeholder="eg. johnsmith@smith.com"
+                        placeholder="Enter an email"
                         value={this.state.email}
                         onChange={this.onChange}
-                        />
-                    <label>Password</label>
-                    <input 
+                    />
+
+                    <TextFieldGroup
                         type="password"
-                        placeholder="eg. test1234"
+                        placeholder="Enter the password"
                         name="password"   
                         value={this.state.password} 
                         onChange={this.onChange}
                     />
+
                     <button type="submit">Submit</button>
                 </form>
 
