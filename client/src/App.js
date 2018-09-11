@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from 'react'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 // Portfolio Nav & Footer
-import Navbar from './portfolio/components/pages/Navbar'
+import Navbar from './portfolio/components/layouts/Navbar'
 import Footer from './portfolio/components/layouts/Footer'
 
 // Portfolio Components
@@ -12,10 +12,10 @@ import Contact from './portfolio/components/pages/Contact'
 import Work from './portfolio/components/pages/Work'
 
 // Dashboard Components
-import Login from './dashboard/Login'
-import Register from './dashboard/Register'
-import Dashboard from './dashboard/Dashboard'
-import Profile from './dashboard/Profile'
+import Login from './dashboard/components/pages/Login'
+import Register from './dashboard/components/pages/Register'
+import Dashboard from './dashboard/components/pages/Dashboard'
+import Profile from './dashboard/components/pages/Profile'
 
 // CSS for everything
 import './portfolio/styles/main.css'
