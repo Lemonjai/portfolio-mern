@@ -15,7 +15,7 @@ import Work from './portfolio/components/pages/Work'
 import Login from './dashboard/Login'
 import Register from './dashboard/Register'
 
-import './portfolio/styles/style.css'
+import './portfolio/styles/main.css'
 
 class App extends Component {
     render() {
@@ -27,8 +27,8 @@ class App extends Component {
                     <Route exact path='/about' component={ About } />
                     <Route exact path='/contact' component={ Contact } />
                     <Route exact path='/work' component={ Work } />
-                    <Route exact path='/login' component={ Login } />
-                    <Route exact path='/register' component={ Register } />
+                    <Route exact path='/admin/login' component={ Login } />
+                    <Route exact path='/admin/register' component={ Register } />
                     <Footer />
                 </Fragment>
             </Router>
