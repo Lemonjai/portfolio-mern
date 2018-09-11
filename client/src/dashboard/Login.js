@@ -4,7 +4,6 @@ class Login extends Component {
 
     render(){
         return(
-            
             <main id="login">
                 <h1 className="lg-heading">
                     Log<span className="text-secondary"><strong>in</strong></span>

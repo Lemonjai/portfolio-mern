@@ -1,4 +1,6 @@
 import React, {Component} from 'react'
+import { withRouter } from "react-router-dom"
+import axios from 'axios'
 
 class Register extends Component {
 
@@ -18,6 +20,25 @@ class Register extends Component {
         })
     }
 
+    onSubmit = (e) => {
+        e.preventDefault()
+
+        const newUser = {
+            firstName: this.state.firstName,
+            lastName: this.state.lastName,
+            email: this.state.email,
+            avatar: this.state.avatar,
+            password: this.state.password,
+            password2: this.state.password2
+        }
+
+        axios.post('/users/register', newUser)
+            .then(res => this.props.history.push('/admin/login'))
+            .catch(err => this.setState({
+                errors: err.response.data
+            }))
+    }
+
     render(){
         return(
             <main id="register">
@@ -25,7 +46,7 @@ class Register extends Component {
                     Regis<span className="text-secondary"><strong>ter</strong></span>
                 </h1>
 
-                <form className="wrapper">
+                <form className="wrapper" onSubmit={this.onSubmit}>
                     <label>First Name</label>
                     <input 
                         type="text"
@@ -88,4 +109,4 @@ class Register extends Component {
     }
 }
 
-export default Register
+export default (withRouter(Register))
