@@ -5,6 +5,7 @@ import classnames from 'classnames'
 import { connect } from 'react-redux'
 
 import { registerUser } from '../../../redux/actions/authActions'
+import TextFieldGroup from '../common/TextFieldGroup'
 
 class Register extends Component {
 
@@ -63,59 +64,50 @@ class Register extends Component {
                 </h1>
 
                 <form className="wrapper" onSubmit={this.onSubmit}>
-                    <label>First Name</label>
-                    <input 
+
+                    <TextFieldGroup
                         type="text"
-                        placeholder="eg. John"
+                        placeholder="Enter first name"
                         name="firstName"
                         value={this.state.firstName}
                         onChange={this.onChange}
                     />
-                    <label>Last Name</label>
-                    <input
+                    
+                    <TextFieldGroup
                         type="text"
-                        placeholder="eg. Smith"
+                        placeholder="Enter last name"
                         name="lastName"
                         value={this.state.lastName}
                         onChange={this.onChange}
                     />
-
-                    <label>Email</label>
-                    <input 
+                    <TextFieldGroup
                         type="email"
-                        placeholder="eg. johnsmith@smith.com"
+                        placeholder="Enter an email"
                         name="email"
                         value={this.state.email}
                         onChange={this.onChange}
                     />
-
-                    <label>Avatar</label>
-                    <input 
+                    <TextFieldGroup
                         type="text"
-                        placeholder="eg. https://www.avatar.com/john"
+                        placeholder="Enter your avatar url"
                         name="avatar"
                         value={this.state.avatar}
                         onChange={this.onChange}
                     />
-
-                    <label>Password</label>
-                    <input 
+                    <TextFieldGroup
                         type="password"
-                        placeholder="eg. test1234"
+                        placeholder="Enter your password"
                         name="password"
                         value={this.state.password}
                         onChange={this.onChange}
                     />
-
-                    <label>Confirm Password</label>
-                    <input 
+                    <TextFieldGroup
                         type="password"
-                        placeholder="eg. test1234"
+                        placeholder="Please confirm your password"
                         name="password2"
                         value={this.state.password2}
                         onChange={this.onChange}
                     />
-
                     <button type="submit">Submit</button>
                 </form>
 
