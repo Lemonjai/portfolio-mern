@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import { withRouter } from "react-router-dom"
 import axios from 'axios'
+import classnames from 'classnames'
 
 class Register extends Component {
 
@@ -40,6 +41,9 @@ class Register extends Component {
     }
 
     render(){
+
+        const { errors } = this.state
+
         return(
             <main id="register">
                 <h1 className="lg-heading">
@@ -55,7 +59,6 @@ class Register extends Component {
                         value={this.state.firstName}
                         onChange={this.onChange}
                     />
-
                     <label>Last Name</label>
                     <input
                         type="text"
