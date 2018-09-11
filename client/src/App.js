@@ -5,8 +5,8 @@ import jwt_decode from 'jwt-decode'
 import { Provider } from 'react-redux'
 
 import store from './store'
-import setAuthToken from './util/setAuthToken'
-import {setCurrentUser, logoutUser} from './actions/authActions'
+import setAuthToken from './redux/util/setAuthToken'
+import {setCurrentUser, logoutUser} from './redux/actions/authActions'
 
 
 // Portfolio Nav & Footer
@@ -27,7 +27,6 @@ import Profile from './dashboard/components/pages/Profile'
 
 // CSS for everything
 import './portfolio/styles/main.css'
-import { decode } from 'punycode';
 
 // Check for token
 if(localStorage.jwtToken){
