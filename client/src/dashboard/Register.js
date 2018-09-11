@@ -5,7 +5,7 @@ class Register extends Component {
     render(){
         return(
             
-            <main id="login">
+            <main id="register">
                 <h1 className="lg-heading">
                     Regis<span className="text-secondary"><strong>ter</strong></span>
                 </h1>
@@ -15,7 +15,7 @@ class Register extends Component {
                     <input type="email"/>
                     <label>Password</label>
                     <input type="password"/>
-                    <input type="submit"/>
+                    <button type="submit">Submit</button>
                 </form>
 
             </main>
