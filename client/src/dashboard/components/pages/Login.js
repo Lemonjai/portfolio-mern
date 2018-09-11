@@ -1,6 +1,9 @@
 import React, {Component} from 'react'
 import { withRouter } from "react-router-dom"
-import axios from 'axios'
+import PropTypes from 'prop-types'
+import classnames from 'classnames'
+import { connect } from 'react-redux'
+import { loginUser } from '../../../actions/authActions'
 
 class Login extends Component {
 
@@ -16,30 +19,31 @@ class Login extends Component {
         })
     }
 
+    componentWillReceiveProps = (nextProps) =>{
+
+        if(nextProps.auth.isAuthenticated){
+            this.props.history.push('/admin/dashboard')
+        }
+
+        if(nextProps.errors){
+            this.setState({ errors: nextProps.errors })
+        }
+    }
+
     onSubmit = (e) => {
         e.preventDefault()
-        const newUser = {
+        const userData = {
             email: this.state.email,
             password: this.state.password
         }
 
-        axios.post('/users/login', newUser)
-            .then(res => {
-                // Save the token to local storage
-                const { token } = res.data
-                // Storage the token in local storage
-                localStorage.setItem('jwtToken', token)
-                // Set token to Auth header
-                // setAuthToken(token)
-                this.props.history.push('/admin/dashboard')
-                }
-            )
-            .catch(err => this.setState({
-                errors: err.response.data
-            }))
+        this.props.loginUser(userData, this.props.history)
     }
 
     render(){
+
+        const { errors } = this.state;
+
         return(
             <main id="login">
                 <h1 className="lg-heading">
@@ -71,4 +75,15 @@ class Login extends Component {
     }
 }
 
-export default (withRouter(Login))
+Login.PropTypes = {
+    loginUser: PropTypes.func.isRequired,
+    auth: PropTypes.object.isRequired,
+    errors: PropTypes.object.isRequired
+}
+
+const mapStateToProps = state => ({
+    auth: state.auth,
+    errors: state.errors
+})
+
+export default connect(mapStateToProps, {loginUser})((withRouter(Login)))
