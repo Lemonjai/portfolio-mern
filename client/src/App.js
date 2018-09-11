@@ -14,7 +14,10 @@ import Work from './portfolio/components/pages/Work'
 // Dashboard Components
 import Login from './dashboard/Login'
 import Register from './dashboard/Register'
+import Dashboard from './dashboard/Dashboard'
+import Profile from './dashboard/Profile'
 
+// CSS for everything
 import './portfolio/styles/main.css'
 
 class App extends Component {
@@ -29,6 +32,8 @@ class App extends Component {
                     <Route exact path='/work' component={ Work } />
                     <Route exact path='/admin/login' component={ Login } />
                     <Route exact path='/admin/register' component={ Register } />
+                    <Route exact path='/admin/dashboard' component={Dashboard} />
+                    <Route exact path='/admin/profile' component={Profile} />
                     <Footer />
                 </Fragment>
             </Router>
