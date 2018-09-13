@@ -39,6 +39,22 @@ class Profile extends Component{
                     onChange={this.onChange}
                 />
 
+                <TextFieldGroup
+                    type="text"
+                    placeholder="Enter your company"
+                    name="company"
+                    value={this.state.company}
+                    onChange={this.onChange}
+                />
+
+                <TextFieldGroup
+                    type="text"
+                    placeholder="Enter your location"
+                    name="location"
+                    value={this.state.location}
+                    onChange={this.onChange}
+                />
+
                 <button type="submit">Submit</button>
             </form>
 
