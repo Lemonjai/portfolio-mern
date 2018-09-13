@@ -13,7 +13,8 @@ const InputGroup = ({
 }) => {
     return(
         <Fragment>
-            <textarea
+            <i className={icon} />
+            <input
                 name={name}
                 placeholder={placeholder}
                 value={value}
@@ -24,10 +25,16 @@ const InputGroup = ({
 }
 
 InputGroup.propTypes = {
-    name: propTypes.string.isRequired,
-    placeholder: propTypes.string,
-    value: propTypes.string.isRequired,
-    onChange: propTypes.func.isRequired
+    name: PropTypes.string.isRequired,
+    placeholder: PropTypes.string,
+    icon: PropTypes.string,
+    type: PropTypes.string.isRequired,
+    value: PropTypes.string.isRequired,
+    onChange: PropTypes.func.isRequired
+}
+
+InputGroup.defaultProps = {
+    type: 'text'
 }
 
 export default InputGroup
