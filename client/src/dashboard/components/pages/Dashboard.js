@@ -1,5 +1,6 @@
-import React, {Component} from 'react'
+import React, {Component, Fragment} from 'react'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 import { getCurrentProfile } from '../../../redux/actions/profileActions'
@@ -23,9 +24,24 @@ class Dashboard extends Component{
                 Load<span className="text-secondary"><strong>ing...</strong></span>
                 </h1>
         }else{
-            dashboardContent = <h1 className="lg-heading">
-                Dash<span className="text-secondary"><strong>board</strong></span>
-            </h1>
+            
+            // Check if logged in user has profile data
+            if(Object.keys(profile).length > 0){
+                dashboardContent = <Fragment>
+                    <h1 className="lg-heading">
+                        Dash<span className="text-secondary"><strong>board</strong></span>
+                    </h1>
+                    <p>TO DO: Display profile</p>
+                </Fragment>
+            }else{
+                dashboardContent = <Fragment>
+                    <h1 className="lg-heading">
+                        Dash<span className="text-secondary"><strong>board</strong></span>
+                    </h1>
+                    <p>Please create a profile</p>
+                    <Link to="/profile">Create Profile</Link>
+                </Fragment>
+            }
         }
 
         return(
