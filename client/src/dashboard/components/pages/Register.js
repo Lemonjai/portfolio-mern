@@ -72,7 +72,7 @@ class Register extends Component {
                         value={this.state.firstName}
                         onChange={this.onChange}
                     />
-                    
+
                     <TextFieldGroup
                         type="text"
                         placeholder="Enter last name"
@@ -80,6 +80,7 @@ class Register extends Component {
                         value={this.state.lastName}
                         onChange={this.onChange}
                     />
+
                     <TextFieldGroup
                         type="email"
                         placeholder="Enter an email"
@@ -87,27 +88,31 @@ class Register extends Component {
                         value={this.state.email}
                         onChange={this.onChange}
                     />
+
                     <TextFieldGroup
                         type="text"
-                        placeholder="Enter your avatar url"
+                        placeholder="Enter an avatar url"
                         name="avatar"
                         value={this.state.avatar}
                         onChange={this.onChange}
                     />
+                    
                     <TextFieldGroup
                         type="password"
-                        placeholder="Enter your password"
+                        placeholder="Enter a password"
                         name="password"
                         value={this.state.password}
                         onChange={this.onChange}
                     />
+
                     <TextFieldGroup
                         type="password"
-                        placeholder="Please confirm your password"
+                        placeholder="Confirm your password"
                         name="password2"
                         value={this.state.password2}
                         onChange={this.onChange}
                     />
+
                     <button type="submit">Submit</button>
                 </form>
 

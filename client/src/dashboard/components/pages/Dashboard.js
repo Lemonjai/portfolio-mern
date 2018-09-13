@@ -1,9 +1,15 @@
 import React, {Component} from 'react'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+
+import { getCurrentProfile } from '../../../redux/actions/profileActions'
 
 class Dashboard extends Component{
     render(){
         return(
-            <h1>Dashboard</h1>
+            <div>
+                Dashboard
+            </div>
         )
     }
 }

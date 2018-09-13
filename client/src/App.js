@@ -27,6 +27,7 @@ import Profile from './dashboard/components/pages/Profile'
 
 // CSS for everything
 import './portfolio/styles/main.css'
+import { clearCurrentProfile } from './redux/actions/profileActions';
 
 // Check for token
 if(localStorage.jwtToken){
@@ -43,6 +44,7 @@ if(localStorage.jwtToken){
         // Logout user
         store.dispatch(logoutUser())
         // Clear current profile
+        store.dispatch(clearCurrentProfile)
         // Redirect to home page
         window.location.href='/'
     }
