@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import jwt_decode from 'jwt-decode'
 
 import { Provider } from 'react-redux'
@@ -7,6 +7,7 @@ import { Provider } from 'react-redux'
 import store from './store'
 import setAuthToken from './redux/util/setAuthToken'
 import {setCurrentUser, logoutUser} from './redux/actions/authActions'
+import PrivateRoute from './dashboard/components/common/PrivateRoute'
 
 
 // Portfolio Nav & Footer
@@ -63,8 +64,10 @@ class App extends Component {
                         <Route exact path='/work' component={ Work } />
                         <Route exact path='/admin/login' component={ Login } />
                         <Route exact path='/admin/register' component={ Register } />
-                        <Route exact path='/admin/dashboard' component={Dashboard} />
-                        <Route exact path='/admin/profile' component={Profile} />
+                        <Switch>
+                            <PrivateRoute exact path='/admin/dashboard' component={Dashboard} />
+                            <PrivateRoute exact path='/admin/profile' component={Profile} />
+                        </Switch>
                         <Footer />
                     </Fragment>
                 </Router>
