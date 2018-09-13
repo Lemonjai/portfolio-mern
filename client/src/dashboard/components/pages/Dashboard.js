@@ -39,7 +39,7 @@ class Dashboard extends Component{
                         Dash<span className="text-secondary"><strong>board</strong></span>
                     </h1>
                     <p>Please create a profile</p>
-                    <Link to="/profile">Create Profile</Link>
+                    <Link to="/admin/profile">Create Profile</Link>
                 </Fragment>
             }
         }

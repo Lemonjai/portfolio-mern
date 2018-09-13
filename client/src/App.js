@@ -66,6 +66,8 @@ class App extends Component {
                         <Route exact path='/admin/register' component={ Register } />
                         <Switch>
                             <PrivateRoute exact path='/admin/dashboard' component={Dashboard} />
+                        </Switch>
+                        <Switch>
                             <PrivateRoute exact path='/admin/profile' component={Profile} />
                         </Switch>
                         <Footer />
