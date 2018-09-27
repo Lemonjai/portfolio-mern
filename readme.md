@@ -1,6 +1,6 @@
-# Portfolio For FullStack
+# Portfolio For FullStack (DEPRECIATED)
 
-In progress - Working on Portfolio written using MERN stack
+In progress - Working on Portfolio written using MERN stack (No longer in scope)
 
 ## Summary
 This is a personal fullstack application written for myself to show off my portfolio as a web developer using the JavaScript frameworks and as well any future IoT projects.
